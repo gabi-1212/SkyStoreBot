@@ -17,3 +17,5 @@ yarn-error.log
 
 # Ignore Windows system files
 Thumbs.db
+
+uploads/
