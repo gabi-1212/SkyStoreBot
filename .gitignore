@@ -1,0 +1,19 @@
+# Ignore .env files to prevent sensitive information from being exposed
+.env
+
+# Ignore node_modules directory to prevent unnecessary bloat in the repository
+node_modules/
+
+# Optionally, you can also ignore logs, temporary files, and system files:
+npm-debug.log
+yarn-error.log
+*.log
+
+# Ignore IDE-specific files (for example, Visual Studio Code)
+.vscode/
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
