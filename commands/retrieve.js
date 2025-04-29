@@ -19,6 +19,7 @@ export async function execute(interaction) {
   const found = await findFile(id);
   if (!found) {
     const embed = await makeEmbed(guildId)
+    embed
       .setTitle('File Not Found')
       .setDescription(`No file with ID \`${id}\` found.`);
     return interaction.reply({ embeds: [embed], ephemeral: true });
@@ -28,6 +29,7 @@ export async function execute(interaction) {
   const filepath = `./uploads/${id}${ext}`;
   if (!await fs.pathExists(filepath)) {
     const embed = await makeEmbed(guildId)
+    embed
       .setTitle('Error')
       .setDescription('File is missing on disk.');
     return interaction.reply({ embeds: [embed], ephemeral: true });

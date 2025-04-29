@@ -18,6 +18,7 @@ export async function execute(interaction) {
   const found = await findFile(id);
   if (!found || found.userId !== interaction.user.id) {
     const embed = await makeEmbed(interaction.guildId)
+    embed
       .setTitle('Delete Failed')
       .setDescription('No file with that ID found or you do not own it.');
     return interaction.reply({ embeds: [embed], ephemeral: true });
