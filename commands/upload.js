@@ -19,6 +19,16 @@ export const data = new SlashCommandBuilder()
 export async function execute(interaction) {
   const { guildId, options, user, guild, client } = interaction;
   const attachment = options.getAttachment('file');
+
+  // Check file size (limit to 100MB = 104857600 bytes)
+  if (attachment.size > 104857600) {
+    const embed = await makeEmbed(guildId);
+    embed
+      .setTitle('❌ File Too Large')
+      .setDescription('The file you tried to upload exceeds the 100MB size limit.');
+    return interaction.reply({ embeds: [embed], ephemeral: true });
+  }
+
   await fs.ensureDir('./uploads');
 
   const id = uuidv4();
