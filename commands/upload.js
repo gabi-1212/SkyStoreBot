@@ -48,7 +48,7 @@ export async function execute(interaction) {
       { name: 'Original Name', value: attachment.name, inline: true },
       { name: 'Identifier',     value: id, inline: true }
     );
-  await interaction.reply({ embeds: [embed] });
+    await interaction.reply({ embeds: [embed], ephemeral: true });
 
   const cfg = await getConfig(guildId);
   if (cfg.logging) {

@@ -35,5 +35,5 @@ export async function execute(interaction) {
     return interaction.reply({ embeds: [embed], ephemeral: true });
   }
 
-  await interaction.reply({ files: [ { attachment: filepath, name: found.originalName } ] });
+  await interaction.reply({ files: [ { attachment: filepath, name: found.originalName, ephemeral: true } ] });
 }
